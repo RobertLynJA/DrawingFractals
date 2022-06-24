@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "BitmapFileHeader.h"
 
 int main()
 {

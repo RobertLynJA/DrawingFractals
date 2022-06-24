@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BitmapFileHeader.cpp" />
     <ClCompile Include="DrawingFractals.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BitmapFileHeader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
