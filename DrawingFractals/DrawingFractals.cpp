@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "BitmapFileHeader.h"
+#include "BitmapInfoHeader.h"
 
 int main()
 {
