@@ -11,13 +11,24 @@ int main()
 
 	Bitmap bitmap(WIDTH, HEIGHT);
 
-	for (int i = 0; i < WIDTH; i++)
+	double min = 999999;
+	double max = -999999;
+
+	for (int x = 0; x < WIDTH; x++)
 	{
-		for (int j = 0; j < HEIGHT; j++)
+		for (int y = 0; y < HEIGHT; y++)
 		{
-			bitmap.setPixel(i, j, 255, 0, 0);
+			double xFractal{ (x - WIDTH / 2) * (2.0 / WIDTH) };
+			double yFractal{ (y - HEIGHT / 2) * (2.0 / HEIGHT) };
+			//bitmap.setPixel(i, j, 255, 0, 0);
+
+			if (xFractal < min) min = xFractal;
+			if (xFractal > max)	max = xFractal;
 		}
 	}
+
+	cout << min << endl;
+	cout << max << endl;;
 
 	bitmap.write("test.bmp");
 
