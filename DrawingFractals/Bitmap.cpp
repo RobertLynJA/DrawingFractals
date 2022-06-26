@@ -3,9 +3,11 @@
 #include "BitmapFileHeader.h"
 #include "BitmapInfoHeader.h"
 
+#include <iostream>
+
 using namespace std;
 
-Bitmap::Bitmap(int width, int height) : m_width(width), m_height(height), m_pPixels(new int8_t[width * height * 3]())
+Bitmap::Bitmap(int width, int height) : m_width(width), m_height(height), m_pPixels(new uint8_t[width * height * 3]())
 {
 }
 
@@ -37,6 +39,11 @@ bool Bitmap::write(string filename)
 
 void Bitmap::setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue)
 {
+	int baseIndex = (y * 3) * m_width + (x * 3);
+
+	m_pPixels[baseIndex + 0] = blue;
+	m_pPixels[baseIndex + 1] = green;
+	m_pPixels[baseIndex + 2] = red;
 }
 
 Bitmap::~Bitmap()
