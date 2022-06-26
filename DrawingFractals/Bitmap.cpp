@@ -32,8 +32,6 @@ bool Bitmap::write(string filename)
 
 	file.close();
 
-	printf("Wrote");
-
 	return true;
 }
 
