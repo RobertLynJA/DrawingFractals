@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Bitmap.h"
+#include "Mandelbrot.h"
 
 int main()
 {
