@@ -3,14 +3,6 @@
 
 using namespace std;
 
-Mandelbrot::Mandelbrot()
-{
-}
-
-Mandelbrot::~Mandelbrot()
-{
-}
-
 int Mandelbrot::getIterations(double x, double y)
 {
     complex<double> z = 0; 

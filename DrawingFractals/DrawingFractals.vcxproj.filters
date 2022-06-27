@@ -44,5 +44,8 @@
     <ClInclude Include="Mandelbrot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Zoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
