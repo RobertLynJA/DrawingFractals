@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <math.h>
 #include "Bitmap.h"
 #include "Mandelbrot.h"
 
@@ -62,7 +63,7 @@ int main()
 			}
 
 			uint8_t red{ 0 };
-			uint8_t green{ (uint8_t)(hue * 255) };
+			uint8_t green{ (uint8_t)pow(255, hue)};
 			uint8_t blue{ 0 };
 
 			bitmap.setPixel(x, y, red, green, blue);
