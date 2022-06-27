@@ -19,6 +19,7 @@ int main()
 	double max = -999999;
 
 	vector<int> histogram(Mandelbrot::MAX_ITERATIONS + 1, 0);
+	vector<int> fractal(WIDTH * HEIGHT, 0);
 
 	for (int x = 0; x < WIDTH; x++)
 	{
@@ -26,8 +27,10 @@ int main()
 		{
 			double xFractal{ (x - WIDTH / 2 - 200) * (2.0 / HEIGHT) };
 			double yFractal{ (y - HEIGHT / 2) * (2.0 / HEIGHT) };
-			
+
 			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
+			
+			fractal[y * WIDTH + x] = iterations;
 
 			histogram[iterations]++;
 
@@ -36,16 +39,10 @@ int main()
 			color = color * color * color;
 
 			bitmap.setPixel(x, y, 0, color, 0);
-
-			if (xFractal < min) min = xFractal;
-			if (xFractal > max)	max = xFractal;
 		}
 	}
 
 	histogram.pop_back(); //Remove max iterations.
-
-	cout << min << endl;
-	cout << max << endl;;
 
 	bitmap.write("test.bmp");
 
