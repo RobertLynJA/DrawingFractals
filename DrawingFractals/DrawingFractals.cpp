@@ -42,6 +42,8 @@ int main()
 		}
 	}
 
+	histogram.pop_back(); //Remove max iterations.
+
 	cout << min << endl;
 	cout << max << endl;;
 
