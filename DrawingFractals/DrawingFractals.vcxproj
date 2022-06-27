@@ -132,6 +132,7 @@
     <ClCompile Include="BitmapInfoHeader.cpp" />
     <ClCompile Include="DrawingFractals.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />
+    <ClCompile Include="ZoomList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitmap.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="BitmapInfoHeader.h" />
     <ClInclude Include="Mandelbrot.h" />
     <ClInclude Include="Zoom.h" />
+    <ClInclude Include="ZoomList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
