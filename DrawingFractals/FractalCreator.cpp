@@ -11,6 +11,18 @@ FractalCreator::~FractalCreator()
 {
 }
 
+void FractalCreator::run(std::string filename)
+{
+	addZoom(Zoom(295, m_height - 202, 0.1));
+	addZoom(Zoom(312, m_height - 304, 0.1));
+
+	calculateIteration();
+	calculateTotalIterations();
+	drawFractal();
+
+	writeBitmap(filename);
+}
+
 void FractalCreator::calculateIteration()
 {
 	for (int x = 0; x < m_width; x++)
@@ -65,10 +77,6 @@ void FractalCreator::addZoom(const Zoom& zoom)
 
 void FractalCreator::writeBitmap(std::string name)
 {
-	calculateIteration();
-	calculateTotalIterations();
-	drawFractal();
-
 	m_bitmap.write(name);
 }
 
