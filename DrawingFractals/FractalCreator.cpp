@@ -20,6 +20,12 @@ void FractalCreator::run(std::string filename)
 	writeBitmap(filename);
 }
 
+void FractalCreator::addRange(double rangeEnd, const RGB &rgb)
+{
+	m_ranges.push_back(rangeEnd * Mandelbrot::MAX_ITERATIONS);
+	m_colors.push_back(rgb);
+}
+
 void FractalCreator::calculateIteration()
 {
 	for (int x = 0; x < m_width; x++)
@@ -41,8 +47,8 @@ void FractalCreator::calculateIteration()
 
 void FractalCreator::drawFractal()
 {
-	RGB startColor(0, 0, 2);
-	RGB endColor(255, 128, 74);
+	RGB startColor(0, 0, 0);
+	RGB endColor(0, 0, 255);
 	RGB colorDiff = endColor - startColor;
 
 	for (int x = 0; x < m_width; x++)

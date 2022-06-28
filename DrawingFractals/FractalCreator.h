@@ -18,6 +18,9 @@ private:
 	int m_height;
 	int m_total{ 0 };
 
+	std::vector<int> m_ranges;
+	std::vector<RGB> m_colors;
+
 	void calculateIteration();
 	void drawFractal();
 	void calculateTotalIterations();
@@ -26,6 +29,7 @@ private:
 public:
 	FractalCreator(int width, int height);
 	~FractalCreator();
+	void addRange(double rangeEnd, const RGB& rgb);
 	void addZoom(const Zoom& zoom);
 	void run(std::string filename);
 
