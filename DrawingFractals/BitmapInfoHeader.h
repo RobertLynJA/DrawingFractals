@@ -3,13 +3,13 @@
 
 using namespace std;
 
-#pragma pack(2)
+#pragma pack(push, 2)
 
 struct BitmapInfoHeader
 {
 	int32_t headerSize{ 40 };
-	int32_t width;
-	int32_t height;
+	int32_t width{ 0 };
+	int32_t height{ 0 };
 	int16_t planes{ 1 };
 	int16_t bitsPerPixel{ 24 };
 	int32_t compression{ 0 };
@@ -20,3 +20,4 @@ struct BitmapInfoHeader
 	int32_t importantColors{ 0 };
 };
 
+#pragma pack(pop)
