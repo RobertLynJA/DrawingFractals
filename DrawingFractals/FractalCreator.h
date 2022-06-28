@@ -5,6 +5,7 @@
 #include "Mandelbrot.h"
 #include "ZoomList.h"
 #include "Bitmap.h"
+#include "RGB.h"
 
 class FractalCreator
 {
@@ -20,12 +21,12 @@ private:
 	void calculateIteration();
 	void drawFractal();
 	void calculateTotalIterations();
-	void addZoom(const Zoom& zoom);
 	void writeBitmap(std::string name);
 
 public:
 	FractalCreator(int width, int height);
 	~FractalCreator();
+	void addZoom(const Zoom& zoom);
 	void run(std::string filename);
 
 };

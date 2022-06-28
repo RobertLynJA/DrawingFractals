@@ -12,10 +12,7 @@ FractalCreator::~FractalCreator()
 }
 
 void FractalCreator::run(std::string filename)
-{
-	addZoom(Zoom(295, m_height - 202, 0.1));
-	addZoom(Zoom(312, m_height - 304, 0.1));
-
+{	
 	calculateIteration();
 	calculateTotalIterations();
 	drawFractal();
@@ -44,6 +41,9 @@ void FractalCreator::calculateIteration()
 
 void FractalCreator::drawFractal()
 {
+	RGB startColor(0, 0, 2);
+	RGB endColor(255, 128, 74);
+	RGB colorDiff = endColor - startColor;
 
 	for (int x = 0; x < m_width; x++)
 	{
@@ -61,9 +61,9 @@ void FractalCreator::drawFractal()
 				}
 			}
 
-			uint8_t red{ 0 };
-			uint8_t green{ (uint8_t)(hue * 255) };
-			uint8_t blue{ 0 };
+			uint8_t red{ (uint8_t)(startColor.r + colorDiff.r * hue) };
+			uint8_t green{ (uint8_t)(startColor.g + colorDiff.g * hue) };
+			uint8_t blue{ (uint8_t)(startColor.b + colorDiff.b * hue) };
 
 			m_bitmap.setPixel(x, y, red, green, blue);
 		}
