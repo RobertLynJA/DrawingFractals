@@ -20,6 +20,10 @@ int main()
 	double min = 999999;
 	double max = -999999;
 
+	ZoomList zoomList(WIDTH, HEIGHT);
+
+	zoomList.add(Zoom(WIDTH / 2, HEIGHT / 2, 1));
+
 	vector<int> histogram(Mandelbrot::MAX_ITERATIONS + 1, 0);
 	vector<int> fractal(WIDTH * HEIGHT, 0);
 
