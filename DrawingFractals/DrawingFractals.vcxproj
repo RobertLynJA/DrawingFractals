@@ -118,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,6 +132,7 @@
     <ClCompile Include="BitmapFileHeader.cpp" />
     <ClCompile Include="BitmapInfoHeader.cpp" />
     <ClCompile Include="DrawingFractals.cpp" />
+    <ClCompile Include="FractalCreator.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />
     <ClCompile Include="ZoomList.cpp" />
   </ItemGroup>
@@ -138,6 +140,7 @@
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="BitmapFileHeader.h" />
     <ClInclude Include="BitmapInfoHeader.h" />
+    <ClInclude Include="FractalCreator.h" />
     <ClInclude Include="Mandelbrot.h" />
     <ClInclude Include="Zoom.h" />
     <ClInclude Include="ZoomList.h" />
