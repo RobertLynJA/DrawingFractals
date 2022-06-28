@@ -131,7 +131,7 @@
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="BitmapFileHeader.cpp" />
     <ClCompile Include="BitmapInfoHeader.cpp" />
-    <ClCompile Include="DrawingFractals.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="FractalCreator.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />
     <ClCompile Include="ZoomList.cpp" />
