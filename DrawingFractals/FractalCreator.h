@@ -20,10 +20,14 @@ private:
 
 	std::vector<int> m_ranges;
 	std::vector<RGB> m_colors;
+	std::vector<int> m_rangeTotals;
+
+	bool m_bGotFirstRange{ false };
 
 	void calculateIteration();
 	void drawFractal();
 	void calculateTotalIterations();
+	void calculateRangeTotals();
 	void writeBitmap(std::string name);
 
 public:
