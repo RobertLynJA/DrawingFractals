@@ -25,6 +25,7 @@ bool Bitmap::write(string filename)
 	ofstream file(filename, ios::out | ios::binary);
 
 	if (!file) {
+		cout << "Cannot create file" << endl;
 		return false;
 	}
 
