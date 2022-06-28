@@ -1,4 +1,5 @@
 #include "FractalCreator.h"
+#include <cassert>
 
 FractalCreator::FractalCreator(int width, int height) : m_width(width), m_height(height),
 	m_histogram(Mandelbrot::MAX_ITERATIONS + 1, 0), m_fractal(width * height, 0),
@@ -36,6 +37,28 @@ void FractalCreator::calculateRangeTotals()
 
 		m_rangeTotals[rangeIndex] += pixels;
 	}
+}
+
+int FractalCreator::getRange(int iterations) const
+{
+	int range = 0;
+
+	for (int i = 0; i < m_ranges.size(); i++)
+	{
+		range = i;
+
+		if (m_ranges[i] > iterations)
+		{
+			break;
+		}
+	}
+
+	range--;
+
+	assert(range > -1);
+	assert(range < m_ranges.size());
+
+	return range;
 }
 
 void FractalCreator::addRange(double rangeEnd, const RGB &rgb)
